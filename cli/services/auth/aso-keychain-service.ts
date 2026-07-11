@@ -36,16 +36,21 @@ export class AsoKeychainService {
   }
 
   saveCredentials(credentials: AppleLoginCredentials): void {
-    runSecurityCommand([
-      "add-generic-password",
-      "-U",
-      "-s",
-      SERVICE_NAME,
-      "-a",
-      ACCOUNT_NAME,
-      "-w",
-      JSON.stringify(credentials),
-    ]);
+    try {
+      runSecurityCommand([
+        "add-generic-password",
+        "-U",
+        "-s",
+        SERVICE_NAME,
+        "-a",
+        ACCOUNT_NAME,
+        "-w",
+        JSON.stringify(credentials),
+      ]);
+    } catch {
+      // Gracefully fail on Windows/Linux where the macOS security CLI is missing
+      return;
+    }
   }
 
   clearCredentials(): void {

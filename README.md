@@ -1,7 +1,7 @@
 <h1 align="center">App Store Optimization CLI</h1>
 
 <p align="center">
-  <img src="./assets/app-icon/aso-icon-readme.png" alt="ASO icon" width="132" />
+  <img src="./assets/app-icon/keywords-readme.png" alt="ASO icon" width="132" />
 </p>
 
 <p align="center">

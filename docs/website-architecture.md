@@ -49,7 +49,7 @@
 
 ## Shared Asset Policy
 - Website imports images directly from existing repo sources:
-  - `assets/app-icon/aso-icon-readme.png`
+  - `assets/app-icon/keywords-readme.png`
   - `cli/dashboard-ui/public/dashboard.jpg`
   - `cli/dashboard-ui/public/mcp.jpg`
 - No duplicate tracked copies under `website/`; README and website stay visually in sync.

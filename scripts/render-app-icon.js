@@ -8,9 +8,8 @@ const appIconDir = path.join(rootDir, "assets", "app-icon");
 const sourceHtmlPath = path.join(appIconDir, "app-icon.html");
 
 const TARGETS = [
-  { path: path.join(appIconDir, "aso-icon.png"), size: 1024, type: "png" },
-  { path: path.join(appIconDir, "aso-icon.jpg"), size: 1024, type: "jpeg", quality: 95 },
-  { path: path.join(appIconDir, "aso-icon-readme.png"), size: 256, type: "png" },
+  { path: path.join(appIconDir, "keywords-icon.png"), size: 1024, type: "png" },
+  { path: path.join(appIconDir, "keywords-readme.png"), size: 256, type: "png" },
   { path: path.join(rootDir, "cli", "dashboard-ui", "public", "aso-sidebar-icon.png"), size: 88, type: "png" },
   { path: path.join(rootDir, "cli", "dashboard-ui", "public", "favicon.png"), size: 64, type: "png" },
 ];

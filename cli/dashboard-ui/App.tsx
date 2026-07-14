@@ -35,6 +35,7 @@ import { AsoPromptDialog } from "./components/aso-prompt-dialog";
 import { KeywordActionMenu } from "./components/keyword-action-menu";
 import { AddAppDialog } from "./components/add-app-dialog";
 import { AppActionMenu } from "./components/app-action-menu";
+import { TopAppsGrid } from "./components/top-apps-grid";
 import { ContextDeleteConfirm } from "./components/context-delete-confirm";
 import {
   DASHBOARD_FILTER_DEFAULTS,
@@ -2406,6 +2407,32 @@ export function App() {
                     </span>
                   </button>
                 ) : null}
+                <button
+                  className={`app-item ${selectedAppId === "TOP_APPS_PAGE" ? "active" : ""}`}
+                  data-app-id="TOP_APPS_PAGE"
+                  role="tab"
+                  aria-selected={selectedAppId === "TOP_APPS_PAGE"}
+                  onClickCapture={(event) => {
+                    event.stopPropagation();
+                    event.preventDefault();
+                    setSelectedAppId("TOP_APPS_PAGE");
+                    if (isCompactLayout) {
+                      document.body.classList.remove("sidebar-open");
+                    }
+                  }}
+                >
+                  <span className="research-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.6" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.6" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.6" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.6" />
+                    </svg>
+                  </span>
+                  <span className="app-meta">
+                    <span className="app-name">Top Apps</span>
+                  </span>
+                </button>
                 {researchApps.map((app) => {
                   const isSelected = selectedAppId === app.id;
                   return (
@@ -2591,8 +2618,12 @@ export function App() {
       </aside>
 
       <main className="main">
-        <Card className="add-card">
-          <form id="add-form" className="add-form" onSubmit={onAddKeywords}>
+        {selectedAppId === "TOP_APPS_PAGE" ? (
+          <TopAppsGrid />
+        ) : (
+          <>
+            <Card className="add-card">
+              <form id="add-form" className="add-form" onSubmit={onAddKeywords}>
             <div className="onboarding-target-slot add-keywords-slot">
               <Input
                 ref={addKeywordsInputRef}
@@ -3000,6 +3031,8 @@ export function App() {
             </p>
           ) : null}
         </Card>
+          </>
+        )}
       </main>
       {keywordActionMenu ? (
         <KeywordActionMenu

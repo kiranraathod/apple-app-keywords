@@ -1,5 +1,6 @@
 import * as http from "http";
 import * as path from "path";
+import axios from "axios";
 import { logger } from "../utils/logger";
 import {
   listOwnedAppIdsByKind,
@@ -506,6 +507,39 @@ export function createServerRequestHandler(): http.RequestListener {
           process.env.ASO_BUGSNAG_VERBOSE_TRACES === "1",
           process.env.BUGSNAG_API_KEY
         );
+        return;
+      }
+
+      // --- Top Apps Feature: RSS feed (default top charts) ---
+      if (req.method === "GET" && pathname === "/api/top-apps-rss") {
+        try {
+          const rssUrl = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/50/apps.json";
+          const response = await axios.get(rssUrl, { timeout: 10000 });
+          sendJson(res, 200, { success: true, data: response.data });
+        } catch (error) {
+          reportDashboardError(error, { method: "GET", path: "/api/top-apps-rss" });
+          sendApiError(res, 500, "INTERNAL_ERROR", "Failed to fetch top apps from Apple RSS feed");
+        }
+        return;
+      }
+
+      // --- Top Apps Feature: iTunes Search API (dynamic search) ---
+      if (req.method === "GET" && pathname === "/api/top-apps-search") {
+        const term = query.term;
+        if (!term || typeof term !== "string" || term.trim().length === 0) {
+          sendApiError(res, 400, "BAD_REQUEST", "Missing or empty 'term' query parameter");
+          return;
+        }
+        try {
+          // Apple iTunes Search API: ~20 calls/min rate limit
+          // Best practice: URL-encode the term, use entity=software for apps only
+          const searchUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(term.trim())}&entity=software&country=US&limit=30`;
+          const response = await axios.get(searchUrl, { timeout: 10000 });
+          sendJson(res, 200, { success: true, data: response.data });
+        } catch (error) {
+          reportDashboardError(error, { method: "GET", path: "/api/top-apps-search" });
+          sendApiError(res, 500, "INTERNAL_ERROR", "Failed to search iTunes");
+        }
         return;
       }
 

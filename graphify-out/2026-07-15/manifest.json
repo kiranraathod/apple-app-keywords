@@ -100,9 +100,9 @@
     "semantic_hash": "6d2b0faa57dbae1a085cd1e43986f788"
   },
   "cli/dashboard-server/server.ts": {
-    "mtime": 1784019862.043095,
-    "ast_hash": "becce9e6a5e432a1b73e8da06eb5cdb6",
-    "semantic_hash": "becce9e6a5e432a1b73e8da06eb5cdb6"
+    "mtime": 1783486349.5824192,
+    "ast_hash": "71be91fac224efd81eb1818b76ac51eb",
+    "semantic_hash": "71be91fac224efd81eb1818b76ac51eb"
   },
   "cli/dashboard-server/setup-state.test.ts": {
     "mtime": 1783486349.5834196,
@@ -130,9 +130,9 @@
     "semantic_hash": "4761132c72177c1a0796e73be203fa11"
   },
   "cli/dashboard-ui/App.tsx": {
-    "mtime": 1784017446.7514462,
-    "ast_hash": "63ef928cdc2d62e6182b672fe8011d9c",
-    "semantic_hash": "63ef928cdc2d62e6182b672fe8011d9c"
+    "mtime": 1783486349.5914197,
+    "ast_hash": "bbe39e02a52db1572a676d1fa19ff621",
+    "semantic_hash": "bbe39e02a52db1572a676d1fa19ff621"
   },
   "cli/dashboard-ui/app-helpers.test.tsx": {
     "mtime": 1783486349.5924215,
@@ -970,9 +970,9 @@
     "semantic_hash": "9553eb00251d29e35ace2b4d2092862c"
   },
   "package.json": {
-    "mtime": 1784015973.5601506,
-    "ast_hash": "d5ab96712ad351eb63a2a4179c0b98d3",
-    "semantic_hash": "d5ab96712ad351eb63a2a4179c0b98d3"
+    "mtime": 1783745360.6666446,
+    "ast_hash": "8fa99a298f56c396cae07ed751d8051f",
+    "semantic_hash": "8fa99a298f56c396cae07ed751d8051f"
   },
   "scripts/bugsnag-export-events.sh": {
     "mtime": 1783486349.8595307,
@@ -1058,45 +1058,5 @@
     "mtime": 1783486349.890534,
     "ast_hash": "74e689de1fed021f042a8aef5fa81ed7",
     "semantic_hash": "74e689de1fed021f042a8aef5fa81ed7"
-  },
-  "cli/dashboard-ui/components/top-apps-grid.tsx": {
-    "mtime": 1784019914.658298,
-    "ast_hash": "66b6bfa2879c57b8785e7578c5520b41",
-    "semantic_hash": "66b6bfa2879c57b8785e7578c5520b41"
-  },
-  "assets/app-icon/aso-icon.jpg": {
-    "mtime": 1783486349.5453532,
-    "ast_hash": "7b54d33d97990dc9b4dc569c586d904c",
-    "semantic_hash": "7b54d33d97990dc9b4dc569c586d904c"
-  },
-  "assets/app-icon/keywords-icon.png": {
-    "mtime": 1783491272.9299548,
-    "ast_hash": "2e5edb509cb1ab3f6559c9941fc4bb62",
-    "semantic_hash": "2e5edb509cb1ab3f6559c9941fc4bb62"
-  },
-  "assets/app-icon/keywords-readme.png": {
-    "mtime": 1783491272.9299548,
-    "ast_hash": "2e5edb509cb1ab3f6559c9941fc4bb62",
-    "semantic_hash": "2e5edb509cb1ab3f6559c9941fc4bb62"
-  },
-  "cli/dashboard-ui/public/aso-sidebar-icon.png": {
-    "mtime": 1783486349.6214213,
-    "ast_hash": "7b5a8b81cd4a66df6b021a6a5c428a06",
-    "semantic_hash": "7b5a8b81cd4a66df6b021a6a5c428a06"
-  },
-  "cli/dashboard-ui/public/dashboard.jpg": {
-    "mtime": 1783486349.6274207,
-    "ast_hash": "9326271a814ee88c38663084e4f65f87",
-    "semantic_hash": "9326271a814ee88c38663084e4f65f87"
-  },
-  "cli/dashboard-ui/public/favicon.png": {
-    "mtime": 1783486349.6284218,
-    "ast_hash": "a735ffbc6d462bbc5f1daa604bf5cb8e",
-    "semantic_hash": "a735ffbc6d462bbc5f1daa604bf5cb8e"
-  },
-  "cli/dashboard-ui/public/mcp.jpg": {
-    "mtime": 1783486349.6384199,
-    "ast_hash": "3814e106f1301252dca774f521539f28",
-    "semantic_hash": "3814e106f1301252dca774f521539f28"
   }
 }

@@ -513,7 +513,8 @@ export function createServerRequestHandler(): http.RequestListener {
       // --- Top Apps Feature: RSS feed (default top charts) ---
       if (req.method === "GET" && pathname === "/api/top-apps-rss") {
         try {
-          const rssUrl = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/50/apps.json";
+          const country = typeof query.country === "string" && query.country ? query.country.toLowerCase() : "us";
+          const rssUrl = `https://rss.applemarketingtools.com/api/v2/${country}/apps/top-free/50/apps.json`;
           const response = await axios.get(rssUrl, { timeout: 10000 });
           sendJson(res, 200, { success: true, data: response.data });
         } catch (error) {
@@ -533,7 +534,8 @@ export function createServerRequestHandler(): http.RequestListener {
         try {
           // Apple iTunes Search API: ~20 calls/min rate limit
           // Best practice: URL-encode the term, use entity=software for apps only
-          const searchUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(term.trim())}&entity=software&country=US&limit=30`;
+          const country = typeof query.country === "string" && query.country ? query.country.toUpperCase() : "US";
+          const searchUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(term.trim())}&entity=software&country=${country}&limit=30`;
           const response = await axios.get(searchUrl, { timeout: 10000 });
           sendJson(res, 200, { success: true, data: response.data });
         } catch (error) {

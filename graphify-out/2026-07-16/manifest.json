@@ -1098,45 +1098,5 @@
     "mtime": 1783486349.6384199,
     "ast_hash": "3814e106f1301252dca774f521539f28",
     "semantic_hash": "3814e106f1301252dca774f521539f28"
-  },
-  "CONTRIBUTING.md": {
-    "mtime": 1783486349.534352,
-    "ast_hash": "ab2db2865d4f4967e638919da16e6e63",
-    "semantic_hash": "ab2db2865d4f4967e638919da16e6e63"
-  },
-  "README.md": {
-    "mtime": 1783747956.1934907,
-    "ast_hash": "e9a1d4d9e7a2d99de378b436ea5bf3d1",
-    "semantic_hash": "e9a1d4d9e7a2d99de378b436ea5bf3d1"
-  },
-  "docs/apple-data-endpoints-matrix.md": {
-    "mtime": 1783486349.832391,
-    "ast_hash": "3b4a53503c199e6d232d7f94e01dd0f8",
-    "semantic_hash": "3b4a53503c199e6d232d7f94e01dd0f8"
-  },
-  "docs/aso-error-handling.md": {
-    "mtime": 1783486349.8333864,
-    "ast_hash": "02e68d3b0e22c758423b091732f60c0c",
-    "semantic_hash": "02e68d3b0e22c758423b091732f60c0c"
-  },
-  "docs/aso-keyword-fetch-design.md": {
-    "mtime": 1783486349.835386,
-    "ast_hash": "5d96174b8ded751d4e3a6f6b50b9bd9b",
-    "semantic_hash": "5d96174b8ded751d4e3a6f6b50b9bd9b"
-  },
-  "docs/aso-local-sqlite-schema.md": {
-    "mtime": 1783486349.8364832,
-    "ast_hash": "38a79e2efd09a8179868cff796ff6115",
-    "semantic_hash": "38a79e2efd09a8179868cff796ff6115"
-  },
-  "docs/aso-runtime-flows.md": {
-    "mtime": 1783486349.837462,
-    "ast_hash": "ccbb5a5f6b491fcec7a94f616589d158",
-    "semantic_hash": "ccbb5a5f6b491fcec7a94f616589d158"
-  },
-  "docs/website-architecture.md": {
-    "mtime": 1783747964.4981952,
-    "ast_hash": "48561c554379caa27c52a35e5c7e280d",
-    "semantic_hash": "48561c554379caa27c52a35e5c7e280d"
   }
 }

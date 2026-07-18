@@ -21,6 +21,7 @@ interface iTunesApp {
   artworkUrl512?: string;
   artworkUrl100?: string;
   averageUserRating?: number;
+  trackViewUrl?: string;
 }
 
 /** Unified shape used for rendering */
@@ -30,6 +31,7 @@ interface GridApp {
   developer: string;
   iconUrl: string;
   rating?: number;
+  url?: string;
 }
 
 const COUNTRIES = [
@@ -51,6 +53,7 @@ function rssToGridApp(app: RSSApp): GridApp {
     name: app.name,
     developer: app.artistName,
     iconUrl: app.artworkUrl100,
+    url: app.url,
   };
 }
 
@@ -62,6 +65,7 @@ function itunesSearchToGridApp(app: iTunesApp): GridApp {
     developer: app.artistName,
     iconUrl: app.artworkUrl512 || app.artworkUrl100 || "",
     rating: app.averageUserRating,
+    url: app.trackViewUrl,
   };
 }
 
@@ -229,7 +233,7 @@ export function TopAppsGrid() {
         ) : (
           <div className="top-apps-grid">
             {apps.map((app) => (
-              <div key={app.id} className="top-apps-card">
+              <a key={app.id} className="top-apps-card" href={app.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <img
                   src={app.iconUrl}
                   alt={app.name}
@@ -247,7 +251,7 @@ export function TopAppsGrid() {
                     ★ {app.rating.toFixed(1)}
                   </div>
                 )}
-              </div>
+              </a>
             ))}
           </div>
         )}
